@@ -103,6 +103,7 @@ function buildDisplayTable(responseData){
 						a = a.replace('23Sv7ssp7LH+yj5xbSzluaq7NveEcYPHXZ1PN7Yfv2Q=','Cloudflare Nimbus 2018');
 						a = a.replace('dH7agzGtMxCRIZzOJU9CcMK//V5CIAjGNzV55hB7zFY=','Cloudflare Nimbus 2019');
 						a = a.replace('Xqdz+d9WwOe1Nkh90EngMnqRmgyEoRIShBh1loFxRVg=','Cloudflare Nimbus 2020');
+						a = a.replace('VhQGmi/XwuzT9eG9RLI+x0Z2ubyZEVzA75SYVdaJ0N0=','DigiCert Log Server');
 						a = a.replace('h3W/51l8+IxDmV+9827/Vo1HVjb/SrVgwbTq/16ggw8=','DigiCert Log Server 2');
 						a = a.replace('wRZK4Kdy0tQ5LcgKwQdw1PDEm96ZGkhAwfoHUWT2M2A=','DigiCert Yeti 2018');
 						a = a.replace('4mlLribo6UAJ6IYbtjuD1D7n/nSI+6SPKJMBnd3x2/4=','DigiCert Yeti 2019');
