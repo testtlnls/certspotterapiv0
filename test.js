@@ -101,11 +101,13 @@ function buildDisplayTable(responseData){
 						a = a.replace('sh4FzIuizYogTodm+Su5iiUgZ2va+nDnsklTLe+LkF4=','Google Argon 2020');
 						a = a.replace('9lyUL9F3MCIUVBgIMJRWjuNNExkzv98MLyALzE7xZOM=','Google Argon 2021');
 						a = a.replace('KXm+8J45OSHwVnOfY6V35b5XfZxgCvj5TV0mXCVdx4Q=','Google Argon 2022');
+						a = a.replace('6D7Q2j71BjUy51covIlryQPTy9ERa+zraeF3fW0GvW4=','Google Argon 2023');/* src : inclusion request */
 						a = a.replace('sQzVWabWeEaBH335pRUyc5rEjXA76gMj2l04dVvArU4=','Google Xenon 2018');
 						a = a.replace('CEEUmABxUywWGQRgvPxH/cJlOvopLHKzf/hjrinMyfA=','Google Xenon 2019');
 						a = a.replace('B7dcG+V9aP/xsMYdIxXHuuZXfFeUt2ruvGE6GmnTohw=','Google Xenon 2020');
 						a = a.replace('fT7y+I//iFVoJMLAyp5SiXkrxQ54CX8uapdomX4i8Nc=','Google Xenon 2021');
 						a = a.replace('RqVV63X6kSAwtaKJafTzfREsQXS+/Um4havy/HD+bUc=','Google Xenon 2022');
+						a = a.replace('rfe++nz/EMiLnT2cHj4YarRnKV3PsQwkyoWGNOvcgoo=','Google Xenon 2023');/* src : inclusion request */
 						a = a.replace('dH7agzGtMxCRIZzOJU9CcMK//V5CIAjGNzV55hB7zFY=','Cloudflare Nimbus 2019');
 						a = a.replace('Xqdz+d9WwOe1Nkh90EngMnqRmgyEoRIShBh1loFxRVg=','Cloudflare Nimbus 2020');
 						a = a.replace('RJRlLrDuzq/EQAfYqP4owNrmgr7YyzG1P9MzlrW2gag=','Cloudflare Nimbus 2021');
@@ -123,6 +125,10 @@ function buildDisplayTable(responseData){
 						a = a.replace('7sCV7o1yZA+S48O5G8cSo2lqCXtLahoUOOZHssvtxfk=','DigiCert Nessie 2021');
 						a = a.replace('UaOw9f0BeZxWbbg3eI8MpHrMGyfL956IQpoN/tSLBeU=','DigiCert Nessie 2022');
 						a = a.replace('s3N3B+GEUPhjhtYFqdwRCUp5LbFnDAuH3PADDnk2pZo=','DigiCert Nessie 2023');
+						a = a.replace('ZZszUPQ7EsxepatOx2XT/ebIgkN3d3jnIAP56yuMMSk=','Let\'s Encrypt Oak 2019');
+						a = a.replace('5xLysDd+GmL7jskMYYTx6ns3y1YdESZb8+DzS/JBVG4=','Let\'s Encrypt Oak 2020');
+						a = a.replace('lCC8Ho7VjWyIcx+CiyIsDdHaTV5sT5Q9YdtOL1hNosI=','Let\'s Encrypt Oak 2021');
+						a = a.replace('36Veq2iCTx9sre64X04+WurNohKkal6OOxLAIERcKnM=','Let\'s Encrypt Oak 2022');/* src : inclusion request */
 						a = a.replace('VYHUwhaQNgFK6gubVzxT8MDkOHhwJQgXL6OqHQcT0ww=','Sectigo Sabre');
 						a = a.replace('b1N2rDHwMRnYmQCkURX/dxUcEdkCwQApBo2yCJo32RM=','Sectigo Mammoth');
 						a = a.replace('HQJLjrFJizRN/YfqPvwJlvdQbyNdHUlwYaR3PEOcJfs=','Google Daedalus');
