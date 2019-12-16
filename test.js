@@ -161,7 +161,8 @@ function buildDisplayTable(responseData){
 			};
 };
 /* Reference of following function bin2hex(buffer) is http://code.i-harness.com/ja/docs/dom/subtlecrypto/digest */
-function bin2hex(buffer) {
+
+/* function bin2hex(buffer) {
   var hexCodes = [];
   var view = new DataView(buffer);
   for (var i = 0; i < view.byteLength; i += 4) {
@@ -177,10 +178,15 @@ function bin2hex(buffer) {
 
   /* Join all the hex strings into one */
   return hexCodes.join("");
+}; */
+
+function bin2hex(buffer) {
+  return Array.from(new Uint8Array(buffer), x => ('00' + x.toString(16)).slice(-2)).join('');
 };
+
 /* Reference of following function _base64ToArrayBuffer(base64) is unknown. */
 /* If you use this for public use, please replace this function. */
-function _base64ToArrayBuffer(base64) {
+/* function _base64ToArrayBuffer(base64) {
     var binary_string =  window.atob(base64);
     var len = binary_string.length;
     var bytes = new Uint8Array( len );
@@ -188,7 +194,12 @@ function _base64ToArrayBuffer(base64) {
         bytes[i] = binary_string.charCodeAt(i);
     }
     return bytes.buffer;
+}; */
+
+function _base64ToArrayBuffer(base64) {
+	return Uint8Array.from(window.atob(base64).split(''), x => x.charCodeAt(0)).buffer;
 };
+
 document.getElementById('cert').onclick=function(){
 	var pem = document.getElementById('certInput').value;
 	pem = pem.replace('-----BEGIN CERTIFICATE-----\n','');
