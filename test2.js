@@ -53,11 +53,11 @@ window.logArray = [
 						['/kRhCLHQGreKYsz+q2qysrq/86va2ApNizDfLQAIgww=','DigiCert Nessie 2019'],
 						['ZZszUPQ7EsxepatOx2XT/ebIgkN3d3jnIAP56yuMMSk=','Let\'s Encrypt Oak 2019']
 ];
-window.loglist = new Object();
+/* window.loglist = new Object();
 for (var i=0;i<window.logArray.length;i++){
 						window.loglist[window.logArray[i][0]] = window.logArray[i][1];
 };
-window.logArray = "";
+window.logArray = ""; */
 function buildDisplayTable(responseData){
 			var i, obj;
 			obj = document.createElement('table');
