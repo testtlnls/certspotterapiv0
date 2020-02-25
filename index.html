@@ -23,10 +23,23 @@ function genBookmarklet(){
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'test.js');
   xhr.onreadystatechange = function () {
-    result.href = 'javascript:(function(){' + xhr.responseText.replace(/\n/g,'') + '})();';
-    result.innerHTML = 'Generated Link';
+    resultA.href = 'javascript:(function(){' + xhr.responseText.replace(/\n/g,'') + '})();';
+    resultA.innerHTML = 'Generated Link';
+    copyToClipboardA.href = 'javascript:copyToClipboard(resultA.href)';
+    copyToClipboardA.innerHTML = 'Copy to clipboard';
+    resultPre.innerHTML = 'javascript:(function(){' + xhr.responseText.replace(/\n/g,'') + '})();';
   };
   xhr.send(null);
+};
+
+function copyToClipboard(str){
+  var listener = function(e){
+    e.clipboardData.setData("text/plain" , str);
+    e.preventDefault();
+    document.removeEventListener("copy", listener);
+  };
+  document.addEventListener("copy" , listener);
+  document.execCommand("copy");
 };
 
 -->
@@ -50,7 +63,10 @@ function genBookmarklet(){
   <p>To generate bookmarklet version, please <a onclick="genBookmarklet()" href='javascript:void(0)'>click</a> here. 
     Then, generated link will appear in the following.</p>
 
-<a id='result' href='#'>Not yet generated.</a>
+  <div><a id='resultA' href='#'>Not yet generated.</a></div>
+  <div><a id='copyToClipboardA' href='#'>Not yet generated.</a></div>
+
+<pre id='resulePre'></pre>
 
 </body>
 
