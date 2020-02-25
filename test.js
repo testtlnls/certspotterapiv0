@@ -33,6 +33,7 @@ window.logArray = [
 						['5xLysDd+GmL7jskMYYTx6ns3y1YdESZb8+DzS/JBVG4=','Let\'s Encrypt Oak 2020'],
 						['lCC8Ho7VjWyIcx+CiyIsDdHaTV5sT5Q9YdtOL1hNosI=','Let\'s Encrypt Oak 2021'],
 						['36Veq2iCTx9sre64X04+WurNohKkal6OOxLAIERcKnM=','Let\'s Encrypt Oak 2022'],
+						['tz77JN+cTbp18jnFulj0bF38Qs96nzXEnh0JgSXttJk=','Let\'s Encrypt Oak 2023'],/* from inclusion request */
 						['VYHUwhaQNgFK6gubVzxT8MDkOHhwJQgXL6OqHQcT0ww=','Sectigo Sabre'],
 						['b1N2rDHwMRnYmQCkURX/dxUcEdkCwQApBo2yCJo32RM=','Sectigo Mammoth'],
 						['HQJLjrFJizRN/YfqPvwJlvdQbyNdHUlwYaR3PEOcJfs=','Google Daedalus'],
