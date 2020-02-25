@@ -7,6 +7,8 @@
 <style>
 <!--
 
+body {bgcolor:rgb(255,128,192);}
+
 h1 {text-align:center;}
 
 p {text-indent:1em;}
@@ -19,7 +21,7 @@ p {text-indent:1em;}
 
 function genBookmarklet(){
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://testtlnls.github.io/certspotterapiv0/test.js');
+  xhr.open('GET', 'test.js');
   xhr.onreadystatechange = function () {
     result.href = 'javascript:(function(){' + xhr.responseText.replace(/\n/g,'') + '})();';
     result.innerHTML = 'Generated Link';
@@ -39,13 +41,14 @@ function genBookmarklet(){
   <p>Source on GitHub is 
     <a href="https://github.com/testtlnls/certspotterapiv0/blob/master/test.js">here</a> 
     or raw is 
-    <a href="https://testtlnls.github.io/certspotterapiv0/test.js">here</a> 
-    (<a href="https://testtlnls.github.io/certspotterapiv0/test.js" download="test.js">download</a>).
+    <a href="test.js">here</a> 
+    (<a href="test.js" download="test.js">download</a>).
   </p>
 
 <h2>Prepairing for bookmarklet compiler.</h2>
 
-  <p>To generate bookmarklet version, please <a onclick="genBookmarklet()" href='javascript:void(0)'>click</a> here. Then, generated link will appear in the following.</p>
+  <p>To generate bookmarklet version, please <a onclick="genBookmarklet()" href='javascript:void(0)'>click</a> here. 
+    Then, generated link will appear in the following.</p>
 
 <a id='result' href='#'>Not yet generated.</a>
 
