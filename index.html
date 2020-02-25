@@ -21,7 +21,7 @@ p {text-indent:1em;}
 
 function genBookmarklet(){
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'test.js');
+  xhr.open('GET', 'test.js?cachebuster='+(new Date()).getTime() );
   xhr.onreadystatechange = function () {
     resultA.href = 'javascript:(function(){' + xhr.responseText.replace(/\n/g,'') + '})();';
     resultA.innerHTML = 'Generated Link';
