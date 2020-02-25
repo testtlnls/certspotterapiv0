@@ -33,7 +33,7 @@ function genBookmarklet(){
 };
 
 function copyToClipboard(str){
-  if(!confirm("Are you ready to copy?")){break;};
+  if(confirm("Are you ready to copy?")){
   var listener = function(e){
     e.clipboardData.setData("text/plain" , str);
     e.preventDefault();
@@ -41,6 +41,8 @@ function copyToClipboard(str){
   };
   document.addEventListener("copy" , listener);
   document.execCommand("copy");
+  prompt("Copied to clipboard",str);
+  };
 };
 
 -->
