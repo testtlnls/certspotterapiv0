@@ -27,7 +27,7 @@ function genBookmarklet(){
     resultA.innerHTML = 'Generated Link';
     copyToClipboardA.href = 'javascript:copyToClipboard(resultA.href)';
     copyToClipboardA.innerHTML = 'Copy to clipboard';
-    resultPre.innerHTML = 'javascript:(function(){' + xhr.responseText.replace(/\n/g,'') + '})();';
+    resultPre.innerText = 'javascript:(function(){' + xhr.responseText.replace(/\n/g,'') + '})();';
   };
   xhr.send(null);
 };
