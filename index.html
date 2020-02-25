@@ -33,6 +33,7 @@ function genBookmarklet(){
 };
 
 function copyToClipboard(str){
+  if(!confirm("Are you ready to copy?")){break()};
   var listener = function(e){
     e.clipboardData.setData("text/plain" , str);
     e.preventDefault();
@@ -66,7 +67,7 @@ function copyToClipboard(str){
   <div><a id='resultA' href='#'>Not yet generated.</a></div>
   <div><a id='copyToClipboardA' href='#'>Not yet generated.</a></div>
 
-<pre id='resulePre'></pre>
+<pre id='resultPre'></pre>
 
 </body>
 
