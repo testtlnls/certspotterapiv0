@@ -14,6 +14,22 @@ p {text-indent:1em;}
 -->
 </style>
 
+<script>
+<!--
+
+function genBookmarklet(){
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://testtlnls.github.io/certspotterapiv0/test.js');
+  xhr.onreadystatechange = function () {
+    result.href = 'javascript:(function(){' + xhr.responseText.replace(/\n/g,'') + '})();';
+    result.innerHTML = 'Generated Link';
+  };
+  xhr.send(null);
+};
+
+-->
+</script>
+
 </head>
 
 <body>
@@ -29,7 +45,7 @@ p {text-indent:1em;}
 
 <h2>Prepairing for bookmarklet compiler.</h2>
 
-<p>To generate bookmarklet version, please click here. Then, generated link will appear in the following.</p>
+  <p>To generate bookmarklet version, please <a onclick="genBookmarklet()" href='javascript:void(0)'>click</a> here. Then, generated link will appear in the following.</p>
 
 <a id='result' href='#'>Not yet generated.</a>
 
