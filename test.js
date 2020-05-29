@@ -119,9 +119,19 @@ function buildDisplayTable(responseData){
 					obj.style.fontWeight = 'bold';
 					obj.style.overflowY = 'scroll';
 					obj.id = 'certDetail';
-					obj.innerHTML = '<div align=right>閉じる</div><a href=https://censys.io/certificates/'+
+					obj.innerHTML = '<div align=right>閉じる</div><a href=https://crt.sh/?q='+
 								basedata.sha256+
-								'>censys</a><pre>'+
+								'>crt.sh</a> <a href=https://censys.io/certificates/'+
+								basedata.sha256+
+								'>censys</a> <a href=https://transparencyreport.google.com/https/certificates/'+
+								encodeURIComponent(
+									btoa(
+										Array.from(
+											basedata.sha256.replace(/(.{2})/g,'$1 ').slice(0,-1).split(' '),
+											x => String.fromCharCode(parseInt(x,16))
+										).join('')
+									)
+								)+'>Google</a><pre>'+
 								trcc[trcc.length-1].title.replace(/\x2C/g,'\x2C\n')+
 								'</pre>';
 					obj.onclick = function(){document.body.removeChild(document.getElementById('certDetail'));};
