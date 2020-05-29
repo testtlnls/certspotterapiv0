@@ -34,14 +34,14 @@ window.logArray = [
 						['lCC8Ho7VjWyIcx+CiyIsDdHaTV5sT5Q9YdtOL1hNosI=','Let\'s Encrypt Oak 2021'],
 						['36Veq2iCTx9sre64X04+WurNohKkal6OOxLAIERcKnM=','Let\'s Encrypt Oak 2022'],
 						['tz77JN+cTbp18jnFulj0bF38Qs96nzXEnh0JgSXttJk=','Let\'s Encrypt Oak 2023'],
-						['R0RHfHXeQm1cRO/UqSyWd1l/ZXqP4MrbxtYW7aSXxCU=','Qihoo 360 2020'],
-						['xtftntuOdPCnG01KmEvL66u9KMwf12Mp6IcmzUwlRmM=','Qihoo 360 2021'],
-						['ZjywnB/Nm6pidjzLU07sgFgSKAUHrGmkX804z0zHTPE=','Qihoo 360 2022'],
-						['4mR/bto0BQPGTU4QqGloH96cWizzsy1fIAuWNgWQiCM=','Qihoo 360 2023'],
+						['xc/lS2FRtJsULtJjvecykzY3mXmVUK5ENc0aaZfJw8M=','Qihoo 360 v1 2020'],
+						['SBRYfPKLCP5oP9K82UWZTC63TIroyH/OQpt80x1RvcQ=','Qihoo 360 v1 2021'],
+						['SRG41hTP09mfFtN2VF7huMz8UR9QnwgLoKCH2R367qk=','Qihoo 360 v1 2022'],
+						['tnQLEgAuAz/Q5+lB9Lo+4b/BSbUktM9ijVPv6h9AOo0=','Qihoo 360 v1 2023'],
 						['pZWUO1NwvukG4AUNH7W7xqQOZfJlroUsdjY/rbIzNu0=','TrustAsia 2020'],
 						['Z422Wz50Q7bzo3DV4TqxtDvgoNNR98p0IlDHxvpRqIo=','TrustAsia 2021'],
-						['w2X5s2VPMoPHnamOk9dBj1ure+MlLJjh0vBLuetCfSM=','TrustAsia 2022'], /* from inclusion request */
-						['6H6nZgvCbPYALvVyXT/g4zG5OTu5L79Y6zuQSdr1Q1o=','TrustAsia 2023'], /* from inclusion request */
+						['w2X5s2VPMoPHnamOk9dBj1ure+MlLJjh0vBLuetCfSM=','TrustAsia 2022'],
+						['6H6nZgvCbPYALvVyXT/g4zG5OTu5L79Y6zuQSdr1Q1o=','TrustAsia 2023'],
 						['VYHUwhaQNgFK6gubVzxT8MDkOHhwJQgXL6OqHQcT0ww=','Sectigo Sabre'],
 						['b1N2rDHwMRnYmQCkURX/dxUcEdkCwQApBo2yCJo32RM=','Sectigo Mammoth'],
 						['HQJLjrFJizRN/YfqPvwJlvdQbyNdHUlwYaR3PEOcJfs=','Google Daedalus'],
@@ -60,7 +60,11 @@ window.logArray = [
 						['4mlLribo6UAJ6IYbtjuD1D7n/nSI+6SPKJMBnd3x2/4=','DigiCert Yeti 2019'],
 						['b/FBtWR+QiL37wUs7658If1gjifSr1pun0uKN9ZjPuU=','DigiCert Nessie 2018'],
 						['/kRhCLHQGreKYsz+q2qysrq/86va2ApNizDfLQAIgww=','DigiCert Nessie 2019'],
-						['ZZszUPQ7EsxepatOx2XT/ebIgkN3d3jnIAP56yuMMSk=','Let\'s Encrypt Oak 2019']
+						['ZZszUPQ7EsxepatOx2XT/ebIgkN3d3jnIAP56yuMMSk=','Let\'s Encrypt Oak 2019'],
+						['R0RHfHXeQm1cRO/UqSyWd1l/ZXqP4MrbxtYW7aSXxCU=','Qihoo 360 2020'],
+						['xtftntuOdPCnG01KmEvL66u9KMwf12Mp6IcmzUwlRmM=','Qihoo 360 2021'],
+						['ZjywnB/Nm6pidjzLU07sgFgSKAUHrGmkX804z0zHTPE=','Qihoo 360 2022'],
+						['4mR/bto0BQPGTU4QqGloH96cWizzsy1fIAuWNgWQiCM=','Qihoo 360 2023']
 ];
 function buildDisplayTable(responseData){
 			var i, obj;
@@ -115,9 +119,19 @@ function buildDisplayTable(responseData){
 					obj.style.fontWeight = 'bold';
 					obj.style.overflowY = 'scroll';
 					obj.id = 'certDetail';
-					obj.innerHTML = '<div align=right>閉じる</div><a href=https://censys.io/certificates/'+
+					obj.innerHTML = '<div align=right>閉じる</div><a href=https://crt.sh/?q='+
 								basedata.sha256+
-								'>censys</a><pre>'+
+								'>crt.sh</a> <a href=https://censys.io/certificates/'+
+								basedata.sha256+
+								'>censys</a> <a href=https://transparencyreport.google.com/https/certificates/'+
+								encodeURIComponent(
+									btoa(
+										Array.from(
+											basedata.sha256.replace(/(.{2})/g,'$1 ').slice(0,-1).split(' '),
+											x => String.fromCharCode(parseInt(x,16))
+										).join('')
+									)
+								)+'>Google</a><pre>'+
 								trcc[trcc.length-1].title.replace(/\x2C/g,'\x2C\n')+
 								'</pre>';
 					obj.onclick = function(){document.body.removeChild(document.getElementById('certDetail'));};
